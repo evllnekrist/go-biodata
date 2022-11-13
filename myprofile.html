@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>My Profile</title>
+    </head>
+    <body>
+        <div class="container">
+            <a href="/" class="btn btn-info">&laquo;&nbsp;&nbsp;Back to Home</a>
+            <br><br>
+            {{if .content.Name}}
+            <h3 class="title">
+                Hello, {{.content.Name}} &#128075;
+            </h3>
+            <table class="table table-dark">
+                <tr>
+                    <th>Id Num.</th>
+                    <td>:</td>
+                    <td>{{.content.ID}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>:</td>
+                    <td>{{.content.Email}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>:</td>
+                    <td>{{.content.Addr}}</td>
+                </tr>
+                <tr>
+                    <th>Occupation</th>
+                    <td>:</td>
+                    <td>{{.content.Occup}}</td>
+                </tr>
+                <tr>
+                    <th>Reason</th>
+                    <td>:</td>
+                    <td>{{.content.Reason}}</td>
+                </tr>
+            </table>
+            {{else}}
+                <center>
+                    <h5 class="hov-txt-red">Oopss, email not related to any existed accounts</h5>
+                </center>
+            {{end}}
+        </div>
+    </body>
+</html>
+<style>
+    .hov-txt-red:hover{
+        color: red;
+    }
+</style>
